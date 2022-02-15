@@ -63,13 +63,14 @@ export const postImage = (payload) => async dispatch => {
 }
 
 export const updateImage = (payload) => async dispatch => {
-    const { userId, albumId, imageUrl, name, description } = payload
+    const { id, userId, albumId, imageUrl, name, description } = payload
     const response = await fetch(`/api/images/${payload.id}/edit-image`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+            "id": id,
             "user_id": userId,
             "album_id": albumId,
             "image_url": imageUrl,

@@ -6,3 +6,5 @@ from .add_article_form import AddArticleForm
 from .edit_article_form import EditArticleForm
 from .add_comment_form import AddCommentForm
 from .edit_comment_form import EditCommentForm
+from .add_album_form import AddAlbumForm
+from .edit_album_form import EditAlbumForm
