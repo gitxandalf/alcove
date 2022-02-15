@@ -1,6 +1,6 @@
 # [Alcove]()
 
-• is an [Unsplash](https://unsplash.com/) clone made by [Alexander Gangemi](https://www.linkedin.com/in/alexander-gangemi/) for the purpose of course work in [App Academy](https://www.appacademy.io/) and for use as an addition to his professional portfolios. All content is for private, educational, non-commerical, non-profit use.
+• is an indirect [Unsplash](https://unsplash.com/) clone made by [Alexander Gangemi](https://www.linkedin.com/in/alexander-gangemi/) for the purpose of course work in [App Academy](https://www.appacademy.io/) and for use as an addition to his professional portfolios. All content is for private, educational, non-commerical, non-profit use.
 
 • On this site, users will be able to post images and blog posts as well as search the site for other users images and blogs.
 
