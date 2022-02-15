@@ -3,7 +3,7 @@ from turtle import title
 from flask import Blueprint, request
 from flask_login import login_required
 from app.models import Comment, User, db
-from app.forms import AddCommentFrom, EditCommentFrom
+from app.forms import AddCommentForm, EditCommentForm
 from sqlalchemy import asc
 
 
@@ -28,7 +28,7 @@ def validation_errors_to_error_messages(validation_errors):
 def comments():
     # GET Route for all comments
     users = User.query.all()
-    comments = Review.query.order_by(Review.id.asc()).all()
+    comments = Comment.query.order_by(Comment.id.asc()).all()
     return {'comments': [comment.to_dict() for comment in comments], 'users': [user.to_dict() for user in users]}
 
 # POST A COMMENT

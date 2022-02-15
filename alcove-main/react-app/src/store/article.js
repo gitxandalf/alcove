@@ -62,13 +62,14 @@ export const postArticle = (payload) => async dispatch => {
 }
 
 export const updateArticle = (payload) => async dispatch => {
-    const { userId, imageUrl, title, articleContent } = payload
+    const { id, userId, imageUrl, title, articleContent } = payload
     const response = await fetch(`/api/articles/${payload.id}/edit-article`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+            "id": id,
             "user_id": userId,
             "image_url": imageUrl,
             "title": title,
