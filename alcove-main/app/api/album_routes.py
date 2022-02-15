@@ -5,16 +5,16 @@ album_routes = Blueprint(
     'albums', __name__)
 
 
-@category_routes.route('/')
+@album_routes.route('/')
 def albums():
-    # Route to GET all available Categories
-    categories = Category.query.all()
-    return {'categories': [category.to_dict() for category in categories]}
+    # Route to GET all available Albums
+    albums = Album.query.all()
+    return {'albums': [album.to_dict() for album in albums]}
 
 
-@category_routes.route('/<int:id>/products')
-def products_by_category(id):
-    # GET Route for all data for all products under a certain Category
-    category = Category.query.get(id)
-    products = Product.query.filter(Product.category_id == id).all()
-    return {'category': category.to_dict(), 'products': [product.to_dict() for product in products]}
+@album_routes.route('/<int:id>/images')
+def images_by_album(id):
+    # GET Route for all data for all images under a certain Album
+    album = Album.query.get(id)
+    images = Image.query.filter(Image.category_id == id).all()
+    return {'album': album.to_dict(), 'images': [image.to_dict() for image in images]}
