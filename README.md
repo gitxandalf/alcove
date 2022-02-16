@@ -26,13 +26,13 @@ Javascript | Python | Node.js | NPM | Flask | SQLAlchemy | Alembic | Git | HTML 
 
 To install Alcove on your local machine please clone the project repository. 
 
-•  `git clone `
+•  `git clone ` git@github.com:gitxandalf/alcove.git
 
-•  `cd ` change into the frontend directory 
+•  `cd ` change into the frontend directory in `/react-app`
 
 •  `npm install` dependencies from the package.json within the frontend directory 
 
-•  `cd ` change into the gameZ-starter-main directory 
+•  `cd ` change into the alcove-main directory 
 
 •  `pipenv install` dependencies from the Pipfile within the backend directory
 
@@ -44,7 +44,9 @@ To install Alcove on your local machine please clone the project repository.
 
 ## Future Features:
 
-• 
+• Likes
+
+• Follows / Subscription
 
 ## Technical Implementation:
 
