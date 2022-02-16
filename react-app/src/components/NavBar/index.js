@@ -13,13 +13,9 @@ const NavBar = () => {
   const [pathName, setPathName] = useState(window.location.pathname);
 
   useEffect(() => {
-    if (sessionUser) dispatch(loadCart(sessionUser.id));
-  }, [dispatch, sessionUser])
-
-  useEffect(() => {
     setPathName(window.location.pathname);
     window.scrollTo(0, 0);
-  }, [dispatch, sessionUser, pathName])
+  }, [dispatch, user, pathName])
 
   return (
     <nav>
