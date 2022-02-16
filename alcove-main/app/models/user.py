@@ -8,6 +8,7 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
+    profile_image_url = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     image = db.relationship(
@@ -34,5 +35,6 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
+            'profile_image_url': self.profile_image_url,
             'email': self.email
         }
