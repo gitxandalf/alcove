@@ -34,7 +34,7 @@ def image(id):
     # GET Route for all data for a specified image
     image = Image.query.get(id)
     users = User.query.all()
-    comments = Comment.query.filter(Comment.product_id == id).all()
+    comments = Comment.query.filter(Comment.image_id == id).all()
     return {'image': image.to_dict(), 'comments': [comment.to_dict() for comment in comments], 'users': [user.to_dict() for user in users]}
 
 
@@ -49,7 +49,7 @@ def post_image():
     if form.validate_on_submit():
         image = Image(
             user_id=data["user_id"],
-            album_id=data["album_id"],
+            album_id=form.data["album_id"],
             image_url=form.data['image_url'],
             name=form.data['name'],
             description=form.data['description']
