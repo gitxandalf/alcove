@@ -35,6 +35,15 @@ def user_albums(id):
     return {'user': user.to_dict(), 'albums': [album.to_dict() for album in albums]}
 
 
+@user_routes.route('/<int:user_id>/albums/<int:album_id>/images')
+@login_required
+def user_albums_images(user_id, album_id):
+    user = User.query.get(user_id)
+    album = Album.query.get(album_id)
+    images = Image.query.filter(Image.album_id == album_id).all()
+    return {'user': user.to_dict(), 'images': [image.to_dict() for image in images], 'album': album.to_dict()}
+
+
 @user_routes.route('/<int:id>/articles')
 @login_required
 def user_articles(id):
@@ -43,10 +52,9 @@ def user_articles(id):
     return {'user': user.to_dict(), 'articles': [article.to_dict() for article in articles]}
 
 
-@user_routes.route('/<int:user_id>/albums/<int:album_id>/images')
+@user_routes.route('/<int:user_id>/articles/<int:article_id>')
 @login_required
-def user_albums_images(user_id, album_id):
+def user_article(user_id, article_id):
     user = User.query.get(user_id)
-    album = Album.query.get(album_id)
-    images = Image.query.filter(Image.album_id == album_id).all()
-    return {'user': user.to_dict(), 'images': [image.to_dict() for image in images], 'album': album.to_dict()}
+    article = Article.query.get(article_id)
+    return {'user': user.to_dict(), 'article': article.to_dict()}
