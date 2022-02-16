@@ -11,8 +11,9 @@ album_routes = Blueprint(
 @login_required
 def albums():
     # Route to GET all available Albums
+    users = User.query.all()
     albums = Album.query.all()
-    return {'albums': [album.to_dict() for album in albums]}
+    return {'albums': [album.to_dict() for album in albums], 'users': [user.to_dict() for user in users]}
 
 
 @album_routes.route('/<int:id>/images')
