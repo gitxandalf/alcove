@@ -6,6 +6,7 @@ import { signUp } from '../../store/session';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
+  const [profileImageUrl, setProfileImageUrl] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -15,7 +16,7 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, profileImageUrl, email, password));
       if (data) {
         setErrors(data)
       }
@@ -25,6 +26,11 @@ const SignUpForm = () => {
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
+
+  const updateProfileImageUrl = (e) => {
+    setProfileImageUrl(e.target.value);
+  };
+
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -56,6 +62,15 @@ const SignUpForm = () => {
           name='username'
           onChange={updateUsername}
           value={username}
+        ></input>
+      </div>
+      <div>
+        <label>Profile Image URL</label>
+        <input
+          type='text'
+          name='profile-image-url'
+          onChange={updateProfileImageUrl}
+          value={profileImageUrl}
         ></input>
       </div>
       <div>
