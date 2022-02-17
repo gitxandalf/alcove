@@ -11,7 +11,7 @@ album_routes = Blueprint(
 def albums():
     # Route to GET all available Albums
     users = User.query.all()
-    albums = Album.query.all()
+    albums = Album.query.order_by(Album.id).all()
     return {'albums': [album.to_dict() for album in albums], 'users': [user.to_dict() for user in users]}
 
 
