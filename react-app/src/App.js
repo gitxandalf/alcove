@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import AddAlbumForm from './components/Forms/AddAlbumForm';
 import AlbumDetail from './components/AlbumDetail'
 import { getAlbums } from './store/album';
+import EditAlbumForm from './components/Forms/EditAlbumForm';
 
 function App() {
 
@@ -19,7 +20,6 @@ function App() {
 
   const albums = useSelector(state => state?.album?.entries);
 
-  console.log("ALBUMS!!!", albums)
 
   useEffect(() => {
     (async () => {
@@ -62,6 +62,10 @@ function App() {
 
         <ProtectedRoute exact path='/albums/add-album' >
           <AddAlbumForm albums={albums} />
+        </ProtectedRoute>
+
+        <ProtectedRoute exact path='/albums/:albumId/edit-album' >
+          <EditAlbumForm albums={albums} />
         </ProtectedRoute>
 
         <Route path='/albums/:albumId/images'>

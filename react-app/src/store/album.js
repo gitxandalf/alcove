@@ -59,6 +59,7 @@ export const postAlbum = (payload) => async dispatch => {
 }
 
 export const updateAlbum = (payload) => async dispatch => {
+
     const { id, userId, name, description } = payload
     const response = await fetch(`/api/albums/${payload.id}/edit-album`, {
         method: 'PUT',
