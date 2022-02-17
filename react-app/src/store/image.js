@@ -101,6 +101,7 @@ const initialState = {
 };
 
 const imageReducer = (state = initialState, action) => {
+
     let newState;
 
     switch (action.type) {

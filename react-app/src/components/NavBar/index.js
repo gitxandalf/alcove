@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { getImages } from '../../store/image';
 import { getArticles } from '../../store/article';
 import { getAlbums } from '../../store/album'
@@ -11,10 +11,10 @@ import './NavBar.css'
 
 const NavBar = () => {
 
-  const history = useHistory();
+  // const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
-  const images = useSelector(state => state?.images?.entries)
+  // const images = useSelector(state => state?.images?.entries)
   const [pathName, setPathName] = useState(window.location.pathname);
   const [preview, setPreview] = useState(false)
 

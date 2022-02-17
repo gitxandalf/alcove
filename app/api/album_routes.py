@@ -8,7 +8,6 @@ album_routes = Blueprint(
 
 
 @album_routes.route('/')
-@login_required
 def albums():
     # Route to GET all available Albums
     users = User.query.all()
@@ -17,7 +16,6 @@ def albums():
 
 
 @album_routes.route('/<int:id>/images')
-@login_required
 def images_by_album(id):
     # GET Route for all data for all images under a certain Album
     album = Album.query.get(id)
