@@ -1,11 +1,18 @@
+/* .nav {
+    width: 100vw;
+} */
+
 .nav-bar-container {
     font-family: sans-serif;
     display: flex;
-    /* flex-direction: row; */
+    height: 62px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
+    /* position: fixed ;
+    top: 0;
+    left: 0; */
 }
 
 .nav-bar-container a {
@@ -18,21 +25,18 @@
     color: black;
 }
 
-.home {
+/* .home {
     display: flex;
     flex-direction:row;
     justify-content: flex-start;
-}
+} */
 
 .logo {
     max-width: 50px;
 }
 
 #logout {
-    /* margin-right: 5px; */
-    /* padding-right: 5px; */
-    /* border-right: 1px solid black; */
-    /* border: 1px solid transparent; */
+    border: 1px solid gray;
     border-radius:50%;
     height: 35px;
     width: 35px;
@@ -44,8 +48,23 @@
     align-items: center;
 }
 
+.signup {
+    padding: 5px;
+}
+
 .add-photo {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    border-radius: 5px;
+    padding: 5px;
     margin: 5px;
+}
+
+.add-photo:hover {
+    transition: .2s ease-in-out;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
 }
 
 .dropdown {
