@@ -2,7 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+import { getImages } from '../../store/image';
+import { getArticles } from '../../store/article';
+import { getAlbums } from '../../store/album'
 import LogoutButton from '../auth/LogoutButton';
+import logo from "../../images/logo.png"
+import './NavBar.css'
 
 const NavBar = () => {
 
@@ -11,41 +16,59 @@ const NavBar = () => {
   const user = useSelector(state => state?.session?.user);
   const images = useSelector(state => state?.images?.entries)
   const [pathName, setPathName] = useState(window.location.pathname);
+  const [preview, setPreview] = useState(false)
 
   useEffect(() => {
     setPathName(window.location.pathname);
     window.scrollTo(0, 0);
   }, [dispatch, user, pathName])
 
+  useEffect(() => {
+    dispatch(getImages())
+    dispatch(getArticles())
+    dispatch(getAlbums())
+  }, [dispatch])
+
+  const handleClick = () => {
+    if (preview) setPreview(false)
+    else setPreview(true)
+  }
+
   return (
     <nav>
+      <div className='nav-bar-container'>
 
-      <div className='home'>
-        <NavLink to='/' exact={true} activeClassName='active'>
-          Home
-        </NavLink>
+        <div className='home'>
+          <NavLink exact to='/'><img className='logo' alt="logo" src={logo}></img></NavLink>
+        </div>
+
+
+        <div className='nav-right'>
+          <div className='login'>
+            <NavLink hidden={user ? true : false} to='/login' exact={true} activeClassName='active'>
+              Login
+            </NavLink>
+          </div>
+
+          <div className='signup'>
+            <NavLink hidden={user ? true : false} to='/sign-up' exact={true} activeClassName='active'>
+              Sign Up
+            </NavLink>
+          </div>
+
+          <div className='logout-preview' onClick={handleClick}>
+            {user && <LogoutButton />}
+            {/* {user && preview && <LogoutButton />} */}
+          </div>
+
+          <div className='add-photo'>
+            <NavLink hidden={user ? false : true} to='/add-image' exact={true} activeClassName='active'>
+              Submit a photo
+            </NavLink>
+          </div>
+        </div>
+
       </div>
-
-      <div className='login'>
-        <NavLink to='/login' exact={true} activeClassName='active'>
-          Login
-        </NavLink>
-      </div>
-
-      <div className='signup'>
-        <NavLink to='/sign-up' exact={true} activeClassName='active'>
-          Sign Up
-        </NavLink>
-      </div>
-
-      <div className='users'>
-        <NavLink to='/users' exact={true} activeClassName='active'>
-          Users
-        </NavLink>
-      </div>
-
-      <LogoutButton />
-
     </nav>
   );
 }
