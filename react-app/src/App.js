@@ -12,6 +12,7 @@ import AddAlbumForm from './components/Forms/AddAlbumForm';
 import AlbumDetail from './components/AlbumDetail'
 import { getAlbums } from './store/album';
 import EditAlbumForm from './components/Forms/EditAlbumForm';
+import AddImageForm from './components/Forms/AddImageForm';
 
 function App() {
 
@@ -71,6 +72,10 @@ function App() {
         <Route path='/albums/:albumId/images'>
           <AlbumDetail albums={albums} />
         </Route>
+
+        <ProtectedRoute exact path='/add-image' >
+          <AddImageForm />
+        </ProtectedRoute>
 
       </Switch>
 
