@@ -9,6 +9,8 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import AddAlbumForm from './components/Forms/AddAlbumForm';
+import AlbumDetail from './components/AlbumDetail'
+import { getAlbums } from './store/album';
 
 function App() {
 
@@ -17,15 +19,17 @@ function App() {
 
   const albums = useSelector(state => state?.album?.entries);
 
+  console.log("ALBUMS!!!", albums)
 
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
+      await dispatch(getAlbums())
       setLoaded(true);
     })();
   }, [dispatch]);
 
-  if (!loaded) {
+  if (!loaded || !albums) {
     return null;
   }
 
@@ -59,6 +63,10 @@ function App() {
         <ProtectedRoute exact path='/albums/add-album' >
           <AddAlbumForm albums={albums} />
         </ProtectedRoute>
+
+        <Route path='/albums/:albumId/images'>
+          <AlbumDetail albums={albums} />
+        </Route>
 
       </Switch>
 
