@@ -18,10 +18,9 @@ function AlbumDetail() {
     const images = useSelector(state => state?.image?.entries)
     const albums = useSelector(state => state?.album?.entries)
     const album = albums?.find(album => album?.id === +albumId)
-    const user = useSelector(state => state?.session?.user);
     const users = useSelector(state => state?.album?.usersEntries)
+    const user = useSelector(state => state?.session?.user);
 
-    console.log("USERS", users)
 
     useEffect(() => {
         dispatch(getAlbums())

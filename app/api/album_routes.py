@@ -51,11 +51,10 @@ def edit_album(albumId):
 
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    currentAlbum = Image.query.get(imageId)
+    currentAlbum = Album.query.get(albumId)
 
     if form.validate_on_submit() and currentAlbum:
 
-        currentAlbum.user_id = data["user_id"]
         currentAlbum.name = form.data['name']
         currentAlbum.description = form.data['description']
 

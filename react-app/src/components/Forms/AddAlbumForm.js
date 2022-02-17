@@ -17,8 +17,6 @@ const AddAlbumForm = () => {
     const user = useSelector(state => state.session.user);
     const albums = useSelector(state => state?.album?.entries);
 
-    console.log("ALBUMS", albums)
-
     const onSubmit = async (e) => {
         e.preventDefault();
         if (user && errors.length === 0) {
