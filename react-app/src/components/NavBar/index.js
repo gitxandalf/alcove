@@ -52,7 +52,7 @@ const NavBar = () => {
 
           <div className='signup'>
             <NavLink hidden={user ? true : false} to='/sign-up' exact={true} activeClassName='active'>
-              Sign Up
+              Sign up
             </NavLink>
           </div>
 
@@ -61,8 +61,8 @@ const NavBar = () => {
             {/* {user && preview && <LogoutButton />} */}
           </div>
 
-          <div className='add-photo'>
-            <NavLink hidden={user ? false : true} to='/add-image' exact={true} activeClassName='active'>
+          <div hidden={user ? false : true} className='add-photo'>
+            <NavLink to='/add-image' exact={true} activeClassName='active'>
               Submit a photo
             </NavLink>
           </div>
