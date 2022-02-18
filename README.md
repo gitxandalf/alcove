@@ -1,4 +1,4 @@
-# [Alcove]()
+# [Alcove](https://alcove-aa.herokuapp.com/)
 
 • is an indirect [Unsplash](https://unsplash.com/) clone made by [Alexander Gangemi](https://www.linkedin.com/in/alexander-gangemi/) for the purpose of course work in [App Academy](https://www.appacademy.io/) and for use as an addition to his professional portfolios. All content is for private, educational, non-commerical, non-profit use.
 
@@ -10,7 +10,7 @@ Javascript | Python | Node.js | NPM | Flask | SQLAlchemy | Alembic | Git | HTML 
 
 ## Production Image of Home Page
 
-[This is an image](https://i.imgur.com/Vh3wn9h.png)
+![HomePage](https://i.imgur.com/Vh3wn9h.png)
 
 ## In order to run this application...
 
