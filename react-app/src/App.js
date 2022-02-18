@@ -19,6 +19,7 @@ import { getImages } from './store/image';
 import { getArticles } from './store/article';
 import { getComments } from './store/comment';
 import HomePage from './components/HomePage'
+import Footer from './components/Footer';
 
 function App() {
 
@@ -95,6 +96,8 @@ function App() {
         </ProtectedRoute>
 
       </Switch>
+
+      <Footer />
 
     </BrowserRouter>
   );
