@@ -30,6 +30,10 @@ function ImageDetail() {
         dispatch(getAlbums())
     }, [dispatch, imageId])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     const handleDelete = (e) => {
         e.preventDefault();
         const id = e.target.value
@@ -58,7 +62,7 @@ function ImageDetail() {
     const filteredComments = comments.filter(comment => comment?.image_id === parseInt(imageId))
 
     return (
-        <div>
+        <div className='image-detail'>
             <div className='image-detail-header'>
                 <div id="image-name-div">
                     <p id="image-header"> "{images?.find(curImg => curImg?.id === parseInt(imageId))?.name}" by <a href={`/users/${image?.user_id}`}>{users[image?.user_id].username}</a> </p>
@@ -66,8 +70,8 @@ function ImageDetail() {
                 </div>
 
                 <div className='edit-delete'>
-                    <NavLink className="edit-btn" hidden={user?.id === image?.user_id ? false : true} to={`/images/${image?.id}/edit-image`} value={image?.id} >Edit</NavLink>
-                    <button className="delete-btn" hidden={user?.id === image?.user_id ? false : true} value={image?.id} onClick={handleDelete} type="submit">Delete</button>
+                    <NavLink className="edit-button" hidden={user?.id === image?.user_id ? false : true} to={`/images/${image?.id}/edit-image`} value={image?.id} >Edit Image Details</NavLink>
+                    <button className="delete-button" hidden={user?.id === image?.user_id ? false : true} value={image?.id} onClick={handleDelete} type="submit">Delete Image</button>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@
 } */
 
 .album-detail {
+    margin-top: 62px;
     margin-bottom: 10%;
 }
 
@@ -104,6 +105,10 @@
 
 #album-image-info {
     padding: 0;
+}
+
+#album-image-info a {
+    text-decoration: none;
 }
 
 .image-info-alb {
