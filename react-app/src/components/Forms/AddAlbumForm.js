@@ -50,7 +50,7 @@ const AddAlbumForm = () => {
 
     return (
         <div id="outer-form-div">
-            <form className="form-div" onSubmit={onSubmit}>
+            <form className="image-form-edit" onSubmit={onSubmit}>
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
@@ -63,7 +63,7 @@ const AddAlbumForm = () => {
                         className='input-label'
                     >Name</label>
                     <input
-                        className='name-input'
+                        className='select-input'
                         placeholder='Your album name'
                         type='text'
                         name='name'
