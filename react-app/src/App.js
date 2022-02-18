@@ -21,6 +21,7 @@ import { getComments } from './store/comment';
 import HomePage from './components/HomePage'
 import Footer from './components/Footer';
 import PageNotFound from './components/PageNotFound';
+import ProfilePage from './components/ProfilePage'
 
 function App() {
 
@@ -65,7 +66,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
+          <ProfilePage />
         </ProtectedRoute>
 
         <Route exact path='/' >
