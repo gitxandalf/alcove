@@ -17,7 +17,6 @@ const EditAlbumForm = () => {
     const albums = useSelector(state => state?.album?.entries)
     const album = albums.find(album => album.id === +albumId)
 
-    const users = useSelector(state => state?.album?.usersEntries)
     const user = useSelector(state => state.session.user);
 
     const [name, setName] = useState(album?.name)

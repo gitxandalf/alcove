@@ -72,9 +72,7 @@ def edit_image(imageId):
 
     if form.validate_on_submit() and currentImage:
 
-        currentImage.album_id = data["album_id"]
         currentImage.name = form.data['name']
-        currentImage.image_url = form.data['image_url']
         currentImage.description = form.data['description']
 
         db.session.commit()
