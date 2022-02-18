@@ -56,7 +56,7 @@ function AlbumDetail() {
         <div>
             <div className='album-detail'>
                 <div id="album-name-div">
-                    <p id="album-header"> {albums?.find(curAlb => curAlb?.id === parseInt(albumId))?.name} by <a href={`/users/${album.user_id}`}>{users[album.user_id].username}</a> </p>
+                    <p id="album-header"> "{albums?.find(curAlb => curAlb?.id === parseInt(albumId))?.name}" by <a href={`/users/${album.user_id}`}>{users[album.user_id].username}</a> </p>
                     <p>{albums?.find(curAlb => curAlb?.id === parseInt(albumId))?.description}</p>
                 </div>
 
