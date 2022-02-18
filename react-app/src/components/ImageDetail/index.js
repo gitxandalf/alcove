@@ -65,7 +65,7 @@ function ImageDetail() {
         <div className='image-detail'>
             <div className='image-detail-header'>
                 <div id="image-name-div">
-                    <p id="image-header"> "{images?.find(curImg => curImg?.id === parseInt(imageId))?.name}" by <a href={`/users/${image?.user_id}`}>{users[image?.user_id].username}</a> </p>
+                    <p id="image-header"> "{images?.find(curImg => curImg?.id === parseInt(imageId))?.name}" by <a href={`/users/${image?.user_id}`}>{users[image?.user_id].username}</a> in <a href={`/albums/${image?.album_id}/images`}>{albums?.find(album => image?.album_id === album.id)?.name}</a></p>
                     <p>{images?.find(curImg => curImg?.id === parseInt(imageId))?.description}</p>
                 </div>
 

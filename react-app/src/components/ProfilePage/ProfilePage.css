@@ -18,3 +18,24 @@ border-radius: 50%;
 .username {
     margin-left: 2%;
 }
+
+#album-select-div {
+    /* display: flex; */
+    margin-left: 42.5%;
+    width: 300px;
+    margin-top: 31px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid lightgray;
+}
+
+.add-an-album-link {
+    display: flex;
+    justify-content: center;
+    color:black
+}
+
+.add-an-album-link:hover {
+    transition: 2s ease-in-out;
+    color: lightgray;
+    text-decoration: underline;
+}
