@@ -20,6 +20,7 @@ import { getArticles } from './store/article';
 import { getComments } from './store/comment';
 import HomePage from './components/HomePage'
 import Footer from './components/Footer';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
 
@@ -94,6 +95,10 @@ function App() {
         <ProtectedRoute exact path='/images/:imageId/edit-image' >
           <EditImageForm />
         </ProtectedRoute>
+
+        <Route>
+          <PageNotFound />
+        </Route>
 
       </Switch>
 

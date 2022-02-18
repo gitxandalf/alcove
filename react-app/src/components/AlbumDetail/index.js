@@ -29,6 +29,10 @@ function AlbumDetail() {
         // dispatch(getComments())
     }, [dispatch, albumId])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     const handleDelete = (e) => {
         e.preventDefault();
         const id = e.target.value
@@ -61,8 +65,8 @@ function AlbumDetail() {
                 </div>
 
                 <div className='edit-delete'>
-                    <NavLink className="edit-btn" hidden={user?.id === album?.user_id ? false : true} to={`/albums/${album?.id}/edit-album`} value={album?.id} >Edit</NavLink>
-                    <button className="delete-btn" hidden={user?.id === album?.user_id ? false : true} value={album?.id} onClick={handleDelete} type="submit">Delete</button>
+                    <NavLink className="edit-button" hidden={user?.id === album?.user_id ? false : true} to={`/albums/${album?.id}/edit-album`} value={album?.id} >Edit Album</NavLink>
+                    <button className="delete-button" hidden={user?.id === album?.user_id ? false : true} value={album?.id} onClick={handleDelete} type="submit">Delete Album</button>
                 </div>
                 <div className='image-links'>{images?.filter(image => image?.album_id === parseInt(albumId)).map((image) => (
                     <div id="each-image" key={image?.id}>
@@ -70,7 +74,6 @@ function AlbumDetail() {
                         <div id="album-image-info">
                             <Link id="info-link-a" key={image?.id} to={`/images/${image?.id}`}>
                                 <p className="image-info-alb name-alb-detail" key={image?.id}>{image?.name}</p>
-                                <p id="ellipsis-text" className="image-info-alb description-image-alb" key={image?.id}>{image?.description} </p>
                             </Link>
                         </div>
                     </div>
