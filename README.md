@@ -8,9 +8,9 @@
 
 Javascript | Python | Node.js | NPM | Flask | SQLAlchemy | Alembic | Git | HTML / JSX | CSS | React | Redux | Heroku
 
-## Development Image of Home Page (to be released...)
+## Production Image of Home Page
 
-<!-- ![This is an image]() -->
+[This is an image](https://i.imgur.com/Vh3wn9h.png)
 
 ## In order to run this application...
 
