@@ -3,6 +3,8 @@ body {
 }
 
 .nav-bar-container {
+    z-index: 100;
+    position: fixed;
     font-family: sans-serif;
     display: flex;
     height: 62px;
@@ -10,9 +12,8 @@ body {
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
-    /* position: fixed ;
+    background-color: white;
     top: 0;
-    left: 0; */
 }
 
 .nav-bar-container a {
@@ -40,6 +41,10 @@ body {
     border-radius:50%;
     height: 35px;
     width: 35px;
+}
+
+#logout:hover {
+    cursor: pointer;
 }
 
 .nav-right {
