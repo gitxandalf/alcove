@@ -104,7 +104,7 @@ const albumReducer = (state = initialState, action) => {
         case LOAD: {
 
             const usersEntries = [...action.list.users].reduce((a, b) => {
-                return { ...a, [b.id]: { id: b.id, username: b.username, image_url: b.image_url } }
+                return { ...a, [b.id]: { id: b.id, username: b.username, profile_image_url: b.profile_image_url } }
             }, {})
 
             return {
