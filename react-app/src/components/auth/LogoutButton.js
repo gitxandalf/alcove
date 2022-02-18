@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logout } from '../../store/session';
 // import logo from "../../images/logo.png"
+import "../Forms/Form.css"
+
 
 
 const LogoutButton = () => {

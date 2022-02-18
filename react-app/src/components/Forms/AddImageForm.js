@@ -68,7 +68,7 @@ const AddImageForm = () => {
 
     return (
         <div id="add-image-div">
-            <form className="style-form-edit" onSubmit={onSubmit}>
+            <form className="image-form-edit" onSubmit={onSubmit}>
                 <div className='each-error-div'>
                     {displayErrors && errors?.map((error, ind) => (
                         <div key={ind}>{`* ${error}`}</div>
