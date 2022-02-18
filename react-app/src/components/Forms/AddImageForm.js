@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import "./Form.css"
 import { postImage } from '../../store/image'
 
@@ -12,7 +12,11 @@ const AddImageForm = () => {
     const images = useSelector(state => state?.image?.entries);
     const albums = useSelector(state => state?.album?.entries);
 
-    const [albumId, setAlbumId] = useState(albums?.find(album => album?.user_id === +user.id).id);
+
+
+    const [albumId, setAlbumId] = useState(albums?.find(album => album?.user_id === +user.id)?.id);
+
+
     const [imageUrl, setImageUrl] = useState('')
     const [name, setName] = useState('')
     const [description, setDescription] = useState('');
@@ -75,7 +79,7 @@ const AddImageForm = () => {
                     ))}
                 </div>
                 <h2 id="form-h2"> Post a photo </h2>
-                <div hidden={albumOptions.length ? false : true}
+                <div
                     className='input-div'>
                     <label
                         className='input-label'
@@ -84,9 +88,9 @@ const AddImageForm = () => {
                         className='select-input'
                         type='dropdown'
                         name='album'
-                        required
                         onChange={updateAlbum}
                         value={albumId}>
+                        <option hidden={albumOptions.length ? true : false}>You need an album to post to!</option>
                         {albumOptions.map((album, idx) => (<option key={idx} value={album?.id}>{album.name}</option>))}
                     </select>
                 </div>
@@ -137,7 +141,9 @@ const AddImageForm = () => {
 
                 <div className='submit-btn-div'>
                     <button className="submit-btn" type='submit'>Post this photo!</button>
+                    <NavLink className='submit-btn' id='add-an-album' to={`/albums/add-album`}>Add an album!</NavLink>
                 </div>
+
             </form>
         </div>
     );

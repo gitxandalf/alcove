@@ -4,7 +4,6 @@ import { useParams, useHistory, Link, NavLink } from 'react-router-dom';
 import "./HomePage.css"
 import { getAlbums, getAlbum, removeAlbum } from '../../store/album'
 import { getImages } from '../../store/image';
-import armenia from '../../images/armenia-copy.jpg'
 
 function HomePage() {
 
@@ -22,7 +21,6 @@ function HomePage() {
 
     useEffect(() => {
         dispatch(getAlbums())
-        dispatch(getAlbum(albumId))
         dispatch(getImages())
         // dispatch(getComments())
     }, [dispatch, albumId])
@@ -38,7 +36,6 @@ function HomePage() {
         <div>
             <div className='home-page'>
                 <div id="home-page-header">
-                    {/* <img className='header-bg' src={armenia}></img> */}
                     <p id="home-header-title"> Alcove </p>
                     <p id="home-header">The internet's source of freely-usable images.</p>
                     <p id="home-header">Powered by creators everywhere.</p>
