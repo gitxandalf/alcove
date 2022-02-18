@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
+import "../Forms/Form.css"
+
+
 
 const ProtectedRoute = props => {
   const user = useSelector(state => state.session.user)
