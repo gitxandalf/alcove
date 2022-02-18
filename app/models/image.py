@@ -15,7 +15,7 @@ class Image(db.Model):
     album = db.relationship(
         "Album", back_populates="image")
     comment = db.relationship(
-        "Comment", back_populates="image")
+        "Comment", back_populates="image", cascade="delete-orphan")
 
     def to_dict(self):
         return {
