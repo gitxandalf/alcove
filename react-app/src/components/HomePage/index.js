@@ -4,6 +4,7 @@ import { useParams, useHistory, Link, NavLink } from 'react-router-dom';
 import "./HomePage.css"
 import { getAlbums, getAlbum, removeAlbum } from '../../store/album'
 import { getImages } from '../../store/image';
+import armenia from '../../images/armenia-copy.jpg'
 
 function HomePage() {
 
@@ -37,14 +38,15 @@ function HomePage() {
         <div>
             <div className='home-page'>
                 <div id="home-page-header">
-                    <p id="home-header"> Alcove </p>
-                    <p>The internet's source of freely-usable images.</p>
-                    <p>Powered by creators everywhere.</p>
+                    {/* <img className='header-bg' src={armenia}></img> */}
+                    <p id="home-header-title"> Alcove </p>
+                    <p id="home-header">The internet's source of freely-usable images.</p>
+                    <p id="home-header">Powered by creators everywhere.</p>
                 </div>
 
-                <div className='image-links'>{images?.map((image) => (
+                <div className='home-links'>{images?.map((image) => (
                     <div id="each-image" key={image?.id}>
-                        <Link id="image-link-a" key={image?.id} to={`/images/${image?.id}`}><img key={image?.id} className='image-link' src={image?.image_url} alt='image'></img></Link>
+                        <Link id="image-link-a" key={image?.id} to={`/images/${image?.id}`}><img key={image?.id} className='home-link' src={image?.image_url} alt='image'></img></Link>
                         <div id="home-image-info">
                             <Link id="info-link-a" key={image?.id} to={`/images/${image?.id}`}>
                                 <p className="image-info-alb name-alb-detail" key={image?.id}>{users[image.user_id]?.username}</p>
