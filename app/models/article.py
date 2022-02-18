@@ -12,7 +12,7 @@ class Article(db.Model):
     user = db.relationship(
         "User", back_populates="article")
     comment = db.relationship(
-        "Comment", back_populates="article")
+        "Comment", back_populates="article", cascade="delete-orphan")
 
     def to_dict(self):
         return {
