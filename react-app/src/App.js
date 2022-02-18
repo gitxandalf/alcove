@@ -14,6 +14,10 @@ import { getAlbums } from './store/album';
 import EditAlbumForm from './components/Forms/EditAlbumForm';
 import AddImageForm from './components/Forms/AddImageForm';
 import ImageDetail from './components/ImageDetail';
+import EditImageForm from './components/Forms/EditImageForm';
+import { getImages } from './store/image';
+import { getArticles } from './store/article';
+import { getComments } from './store/comment';
 
 function App() {
 
@@ -27,6 +31,9 @@ function App() {
     (async () => {
       await dispatch(authenticate());
       await dispatch(getAlbums())
+      await dispatch(getImages())
+      await dispatch(getArticles())
+      await dispatch(getComments())
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -58,8 +65,12 @@ function App() {
           <User />
         </ProtectedRoute>
 
-        <Route path='/' exact={true} >
+        <Route exact path='/' >
           <h1>My Home Page</h1>
+        </Route>
+
+        <Route path='/albums/:albumId/images'>
+          <AlbumDetail albums={albums} />
         </Route>
 
         <ProtectedRoute exact path='/albums/add-album' >
@@ -70,17 +81,17 @@ function App() {
           <EditAlbumForm albums={albums} />
         </ProtectedRoute>
 
-        <Route path='/albums/:albumId/images'>
-          <AlbumDetail albums={albums} />
+        <Route exact path='/images/:imageId'>
+          <ImageDetail />
         </Route>
 
         <ProtectedRoute exact path='/add-image' >
           <AddImageForm />
         </ProtectedRoute>
 
-        <Route path='/images/:imageId'>
-          <ImageDetail />
-        </Route>
+        <ProtectedRoute exact path='/images/:imageId/edit-image' >
+          <EditImageForm />
+        </ProtectedRoute>
 
       </Switch>
 

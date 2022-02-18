@@ -8,6 +8,7 @@ import { getAlbums } from '../../store/album'
 import LogoutButton from '../auth/LogoutButton';
 import logo from "../../images/logo.png"
 import './NavBar.css'
+import { getComments } from '../../store/comment';
 
 const NavBar = () => {
 
@@ -23,11 +24,12 @@ const NavBar = () => {
     window.scrollTo(0, 0);
   }, [dispatch, user, pathName])
 
-  useEffect(() => {
-    dispatch(getImages())
-    dispatch(getArticles())
-    dispatch(getAlbums())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(getImages())
+  //   dispatch(getArticles())
+  //   dispatch(getAlbums())
+  //   dispatch(getComments())
+  // }, [dispatch])
 
   const handleClick = () => {
     if (preview) setPreview(false)
