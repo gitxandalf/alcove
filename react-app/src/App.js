@@ -18,6 +18,7 @@ import EditImageForm from './components/Forms/EditImageForm';
 import { getImages } from './store/image';
 import { getArticles } from './store/article';
 import { getComments } from './store/comment';
+import HomePage from './components/HomePage'
 
 function App() {
 
@@ -66,7 +67,7 @@ function App() {
         </ProtectedRoute>
 
         <Route exact path='/' >
-          <h1>My Home Page</h1>
+          <HomePage />
         </Route>
 
         <Route path='/albums/:albumId/images'>
