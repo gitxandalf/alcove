@@ -140,8 +140,8 @@ const AddImageForm = () => {
                 </div>
 
                 <div className='submit-btn-div'>
-                    <button className="submit-btn" type='submit'>Post this photo!</button>
-                    <NavLink className='submit-btn' id='add-an-album' to={`/albums/add-album`}>Add an album!</NavLink>
+                    <button hidden={albumOptions.length ? false : true} className="submit-btn" type='submit'>Post this photo!</button>
+                    <NavLink hidden={albumOptions.length ? true : false} className='submit-btn' id='add-an-album' to={`/albums/add-album`}>Add an album!</NavLink>
                 </div>
 
             </form>
