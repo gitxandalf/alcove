@@ -38,6 +38,7 @@ function AlbumDetail() {
         const id = e.target.value
         dispatch(removeAlbum(id))
         history.push(`/users/${user?.id}`)
+        window.location.reload(false);
     }
 
     // const handleCommentDelete = async (e) => {
