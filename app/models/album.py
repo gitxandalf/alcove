@@ -9,7 +9,7 @@ class Album(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.Text, nullable=False)
     image = db.relationship(
-        "Image", back_populates="album")
+        "Image", back_populates="album", cascade="all, delete-orphan")
     user = db.relationship(
         "User", back_populates="album")
 
