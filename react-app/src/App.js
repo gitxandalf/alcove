@@ -24,6 +24,7 @@ import PageNotFound from './components/PageNotFound';
 import ProfilePage from './components/ProfilePage'
 import ArticleDetail from './components/ArticleDetail'
 import AddArticleForm from './components/Forms/AddArticleForm';
+import EditArticleForm from './components/Forms/EditArticleForm';
 
 function App() {
 
@@ -105,6 +106,10 @@ function App() {
 
         <ProtectedRoute exact path='/add-article' >
           <AddArticleForm />
+        </ProtectedRoute>
+
+        <ProtectedRoute exact path='/articles/:articleId/edit-article' >
+          <EditArticleForm />
         </ProtectedRoute>
 
         <Route>
