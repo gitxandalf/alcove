@@ -143,3 +143,29 @@
 #edit-delete-div {
     margin-bottom: 10%;
 }
+
+#username-p-line a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid lightgray;
+}
+
+#username-p-line a:hover {
+    transition: .5s ease-in-out;
+    color: lightgray;
+}
+
+.comment-label,
+#image-comment-header,
+#image-comment-h5,
+#comment-content-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-p {
+    padding-bottom:15px;
+    border-bottom: 1px solid lightgray;
+}

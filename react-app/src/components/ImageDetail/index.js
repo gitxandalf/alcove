@@ -92,7 +92,7 @@ function ImageDetail() {
                 {comments && comments?.filter(comment => comment?.image_id === parseInt(imageId)).map(comment => (
                     <div id="comment-content-div">
                         <div id='user-info-comment'>
-                            <p id="username-p-line">{users[comment.user_id].username} said:</p>
+                            <p id="username-p-line"><a href={`/users/${comment.user_id}`}>{users[comment.user_id].username}</a> wrote:</p>
                         </div>
 
                         <p className="content-p">{comment?.comment_content}</p>
