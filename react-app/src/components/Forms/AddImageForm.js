@@ -12,10 +12,7 @@ const AddImageForm = () => {
     const images = useSelector(state => state?.image?.entries);
     const albums = useSelector(state => state?.album?.entries);
 
-
-
     const [albumId, setAlbumId] = useState(albums?.find(album => album?.user_id === +user.id)?.id);
-
 
     const [imageUrl, setImageUrl] = useState('')
     const [name, setName] = useState('')

@@ -19,9 +19,6 @@ function ProfilePage() {
 
     const [albumId, setAlbumId] = useState(albums?.find(album => album?.user_id === user?.id)?.id);
 
-
-
-
     useEffect(() => {
         if (!userId) {
             return;
@@ -95,7 +92,7 @@ function ProfilePage() {
 
                 <div className='articles-header'>
                     <p>{user.username}'s Blog</p>
-                    <Link id='new-article' key={user?.id} to={`/articles/add-article`}>Write an Article!</Link>
+                    <Link id='new-article' key={user?.id} to={`/add-article`}>Write an Article!</Link>
                 </div>
 
 
