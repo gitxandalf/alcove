@@ -4,7 +4,7 @@
 
 • On this site, users will be able to post images and blog posts as well as search the site for other users images and blogs.
 
-## Technologies Planned:
+## Technologies Used:
 
 Javascript | Python | Node.js | NPM | Flask | SQLAlchemy | Alembic | Git | HTML / JSX | CSS | React | Redux | Heroku
 
