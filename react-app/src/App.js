@@ -23,6 +23,7 @@ import Footer from './components/Footer';
 import PageNotFound from './components/PageNotFound';
 import ProfilePage from './components/ProfilePage'
 import ArticleDetail from './components/ArticleDetail'
+import AddArticleForm from './components/Forms/AddArticleForm';
 
 function App() {
 
@@ -101,6 +102,10 @@ function App() {
         <Route exact path='/articles/:articleId'>
           <ArticleDetail />
         </Route>
+
+        <ProtectedRoute exact path='/add-article' >
+          <AddArticleForm />
+        </ProtectedRoute>
 
         <Route>
           <PageNotFound />
