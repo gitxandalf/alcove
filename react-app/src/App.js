@@ -22,6 +22,7 @@ import HomePage from './components/HomePage'
 import Footer from './components/Footer';
 import PageNotFound from './components/PageNotFound';
 import ProfilePage from './components/ProfilePage'
+import ArticleDetail from './components/ArticleDetail'
 
 function App() {
 
@@ -96,6 +97,10 @@ function App() {
         <ProtectedRoute exact path='/images/:imageId/edit-image' >
           <EditImageForm />
         </ProtectedRoute>
+
+        <Route exact path='/articles/:articleId'>
+          <ArticleDetail />
+        </Route>
 
         <Route>
           <PageNotFound />

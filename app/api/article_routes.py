@@ -34,7 +34,7 @@ def article(id):
     # GET Route for all data for a specified article
     article = Article.query.get(id)
     users = User.query.all()
-    comments = Comment.query.filter(Comment.product_id == id).all()
+    comments = Comment.query.filter(Comment.article_id == id).all()
     return {'article': article.to_dict(), 'comments': [comment.to_dict() for comment in comments], 'users': [user.to_dict() for user in users]}
 
 
