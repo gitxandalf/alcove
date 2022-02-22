@@ -1,3 +1,16 @@
+.profile-left {
+    width: 50%;
+    border-right: 1px solid lightgray;
+    margin-right: 0%;
+}
+
+.profile-right {
+    margin-top: -22.5%;
+    margin-left: 50%;
+    width: 50%;
+    border-left: 1px solid lightgray;
+}
+
 .user-data {
     display: flex;
     flex-direction: row;
@@ -21,7 +34,7 @@ border-radius: 50%;
 
 #album-select-div {
     /* display: flex; */
-    margin-left: 42.5%;
+    margin-left: 35%;
     width: 300px;
     margin-top: 31px;
     margin-bottom: 31px;
@@ -35,7 +48,66 @@ border-radius: 50%;
 }
 
 .add-an-album-link:hover {
-    transition: 2s ease-in-out;
+    transition: .5s ease-in-out;
     color: lightgray;
-    text-decoration: underline;
+}
+
+.article-links {
+    display: flex;
+    margin: 2% 6%;
+    padding: 0;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    /* row-gap: 25px; */
+    /* column-gap: 25px; */
+    align-items: center;
+}
+
+#each-article {
+    max-width: 350px;
+    height: 380px;
+}
+
+#article-link-a {
+    padding: 0;
+    margin: 0;
+}
+
+#article-image-info {
+    padding: 0;
+}
+
+#article-image-info a {
+    text-decoration: none;
+}
+
+#info-link-a {
+    padding: 0;
+    margin: 0;
+}
+
+.article-info {
+    margin: 0;
+    font-size: 12px !important;
+    margin-top: 6px;
+    color:black;
+}
+
+.articles-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:7.5%;
+}
+
+.articles-header a{
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.articles-header a:hover {
+    transition: .5s ease-in-out;
+    color: lightgray;
 }
