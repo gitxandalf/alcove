@@ -52,64 +52,68 @@ function ProfilePage() {
 
             </div>
 
-            <div className='profile-left'>
+            <div className='left-right'>
 
-                <div
-                    id='album-select-div'
-                    className='input-div'>
-                    <label
-                        hidden={albumOptions.length ? false : true}
-                        className='input-label'
-                    >{user.username}'s Albums</label>
-                    <select
-                        hidden={albumOptions.length ? false : true}
-                        className='select-input'
-                        type='dropdown'
-                        name='album'
-                        onChange={(e) => setAlbumId(e.target.value)}
-                        value={albumId}
-                    >
-                        {albumOptions.map((album, idx) => (<option key={idx} value={album?.id}>{album?.name}</option>))}
-                    </select>
-                    <NavLink hidden={albumOptions.length ? true : false} className='add-an-album-link' id='add-an-album' to={`/albums/add-album`}>Add an album!</NavLink>
-                </div>
 
-                <div className='image-links'>{images?.filter(image => image?.album_id === +albumId).map((image) => (
-                    <div id="each-image" key={image?.id}>
-                        <Link id="image-link-a" key={image?.id} to={`/images/${image?.id}`}><img key={image?.id} className='image-link' src={image?.image_url} alt='image'></img></Link>
-                        <div id="album-image-info">
-                            <Link id="info-link-a" key={image?.id} to={`/images/${image?.id}`}>
-                                <p className="image-info-alb name-alb-detail" key={image?.id}>{image?.name}</p>
-                            </Link>
-                        </div>
+                <div className='profile-left'>
+
+                    <div
+                        id='album-select-div'
+                        className='input-div'>
+                        <label
+                            hidden={albumOptions.length ? false : true}
+                            className='input-label'
+                        >{user.username}'s Albums</label>
+                        <select
+                            hidden={albumOptions.length ? false : true}
+                            className='select-input'
+                            type='dropdown'
+                            name='album'
+                            onChange={(e) => setAlbumId(e.target.value)}
+                            value={albumId}
+                        >
+                            {albumOptions.map((album, idx) => (<option key={idx} value={album?.id}>{album?.name}</option>))}
+                        </select>
+                        <NavLink hidden={albumOptions.length ? true : false} className='add-an-album-link' id='add-an-album' to={`/albums/add-album`}>Add an album!</NavLink>
                     </div>
-                ))}</div>
 
-            </div>
-
-
-            <div className='profile-right'>
-
-                <div className='articles-header'>
-                    <p>{user.username}'s Blog</p>
-                    <Link id='new-article' key={user?.id} to={`/add-article`}>Write an Article!</Link>
+                    <div className='image-links'>{images?.filter(image => image?.album_id === +albumId).map((image) => (
+                        <div id="each-image" key={image?.id}>
+                            <Link id="image-link-a" key={image?.id} to={`/images/${image?.id}`}><img key={image?.id} className='image-link' src={image?.image_url} alt='image'></img></Link>
+                            <div id="album-image-info">
+                                <Link id="info-link-a" key={image?.id} to={`/images/${image?.id}`}>
+                                    <p className="image-info-alb name-alb-detail" key={image?.id}>{image?.name}</p>
+                                </Link>
+                            </div>
+                        </div>
+                    ))}</div>
                 </div>
 
 
-                <div className='article-links'>{articles?.filter(article => article?.user_id === +userId).map((article) => (
-                    <div id="each-article" key={article?.id}>
-                        <Link id="image-link-a" key={article?.id} to={`/articles/${article?.id}`}><img key={article?.id} className='image-link' src={article?.image_url} alt='article'></img></Link>
-                        <div id="album-image-info">
-                            <Link id="info-link-a" key={article?.id} to={`/articles/${article?.id}`}>
-                                <p className="article-info" key={article?.id}>{article?.title}</p>
-                            </Link>
-                        </div>
-                    </div>
-                ))}</div>
 
+                <div className='profile-right'>
+
+                    <div className='articles-header'>
+                        <p>{user.username}'s Blog</p>
+                        <Link id='new-article' key={user?.id} to={`/add-article`}>Write an Article!</Link>
+                    </div>
+
+
+                    <div className='article-links'>{articles?.filter(article => article?.user_id === +userId).map((article) => (
+                        <div id="each-article" key={article?.id}>
+                            <Link id="image-link-a" key={article?.id} to={`/articles/${article?.id}`}><img key={article?.id} className='image-link' src={article?.image_url} alt='article'></img></Link>
+                            <div id="album-image-info">
+                                <Link id="info-link-a" key={article?.id} to={`/articles/${article?.id}`}>
+                                    <p className="article-info" key={article?.id}>{article?.title}</p>
+                                </Link>
+                            </div>
+                        </div>
+                    ))}</div>
+
+
+                </div>
 
             </div>
-
         </div>
     );
 }
