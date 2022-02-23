@@ -42,7 +42,7 @@ const EditCommentForm = () => {
     const onSubmit = async (e) => {
         e.preventDefault()
         if (user && errors.length === 0) {
-            editedComment = await dispatch(updateComment({ id: parseInt(imageId), userId: user.id, imageId, commentContent }))
+            editedComment = await dispatch(updateComment({ id: parseInt(commentId), userId: user.id, imageId, commentContent }))
         } else {
             setDisplayErrors(true);
         }
