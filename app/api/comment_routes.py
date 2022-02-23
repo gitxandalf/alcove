@@ -44,7 +44,6 @@ def post_comment():
     if form.validate_on_submit():
         comment = Comment(
             user_id=data["user_id"],
-            article_id=data["article_id"],
             image_id=data["image_id"],
             comment_content=form.data['comment_content'],
         )
@@ -61,16 +60,15 @@ def post_comment():
 @login_required
 def edit_comment(commentId):
     data = request.json
-    form = EditCommentFrom()
+    form = EditCommentForm()
 
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    currentComment = Review.query.get(commentId)
+    currentComment = Comment.query.get(commentId)
 
     if form.validate_on_submit() and currentComment:
 
         currentComment.user_id = data["user_id"]
-        currentComment.article_id = data["article_id"]
         currentComment.image_id = data["image_id"]
         currentComment.comment_content = form.data['comment_content']
 

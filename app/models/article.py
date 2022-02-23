@@ -11,8 +11,6 @@ class Article(db.Model):
     article_content = db.Column(db.Text, nullable=False)
     user = db.relationship(
         "User", back_populates="article")
-    comment = db.relationship(
-        "Comment", back_populates="article", cascade="delete-orphan")
 
     def to_dict(self):
         return {

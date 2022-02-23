@@ -2,6 +2,9 @@
     margin-top: 62px;
 }
 
+.image-detail-left {
+    margin-bottom: 250px;
+}
 
 .image-links a {
     color: black;
@@ -168,4 +171,22 @@
 .content-p {
     padding-bottom:15px;
     border-bottom: 1px solid lightgray;
+}
+
+#image-comment-h5 {
+    margin-bottom: 62px;
+}
+
+#comment-content-div {
+    margin-top: 125px;
+    height: 125px;
+}
+
+#comment-image-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 26%;
+    width: 50%;
+    margin-top: 0px;
 }

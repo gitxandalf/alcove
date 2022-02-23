@@ -105,11 +105,7 @@ function ImageDetail() {
                     </div>
                 ))}
 
-                {/* {user && !(image?.user_id === user?.id) &&
-                    <AddCommentForm iamgeId={imageId} />} */}
-            </div>
-
-            <div className='image-detail-right'>
+                {<AddCommentForm imageId={imageId} />}
 
             </div>
 

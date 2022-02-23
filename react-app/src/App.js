@@ -25,6 +25,7 @@ import ProfilePage from './components/ProfilePage'
 import ArticleDetail from './components/ArticleDetail'
 import AddArticleForm from './components/Forms/AddArticleForm';
 import EditArticleForm from './components/Forms/EditArticleForm';
+import EditCommentForm from './components/Forms/EditCommentForm';
 
 function App() {
 
@@ -110,6 +111,10 @@ function App() {
 
         <ProtectedRoute exact path='/articles/:articleId/edit-article' >
           <EditArticleForm />
+        </ProtectedRoute>
+
+        <ProtectedRoute exact path='/comments/:commentId/edit-comment' >
+          <EditCommentForm />
         </ProtectedRoute>
 
         <Route>
