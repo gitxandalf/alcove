@@ -1,3 +1,7 @@
+.left-right {
+    display: flex;
+}
+
 .profile-left {
     width: 50%;
     border-right: 1px solid lightgray;
@@ -5,8 +9,9 @@
 }
 
 .profile-right {
-    margin-top: -22.5%;
-    margin-left: 50%;
+    /* position:absolute; */
+    /* margin-top: -22.5%; */
+    /* margin-left: 50%; */
     width: 50%;
     border-left: 1px solid lightgray;
 }
