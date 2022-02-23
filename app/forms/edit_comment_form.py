@@ -5,4 +5,5 @@ from wtforms.validators import DataRequired, ValidationError
 
 
 class EditCommentForm(FlaskForm):
-    comment_content = TextAreaField('Content', validators=[DataRequired()])
+    comment_content = TextAreaField(
+        'Comment Content', validators=[DataRequired()])
